@@ -1,10 +1,10 @@
-import * as React from 'react';
 import classNames from 'classnames';
+import * as React from 'react';
 import Cell from '../Cell';
-import TableContext from '../context/TableContext';
-import BodyContext from '../context/BodyContext';
+import { BodyContext } from '../context/BodyContext';
+import { TableContext } from '../context/TableContext';
+import { ColumnType, CustomizeComponent, GetComponentProps, GetRowKey, Key } from '../interface';
 import { getColumnsKey } from '../utils/valueUtil';
-import { ColumnType, CustomizeComponent, GetComponentProps, Key, GetRowKey } from '../interface';
 import ExpandedRow from './ExpandedRow';
 
 export interface BodyRowProps<RecordType> {

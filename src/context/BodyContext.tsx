@@ -1,14 +1,20 @@
 import * as React from 'react';
 import {
-  ColumnType,
+  ColumnsType, ColumnType,
   DefaultRecordType,
-  ColumnsType,
-  TableLayout,
-  RenderExpandIcon,
+
+
+
   ExpandableType,
-  RowClassName,
-  TriggerEventHandler,
-  ExpandedRowRender,
+
+
+  ExpandedRowRender, RenderExpandIcon,
+
+  RowClassName, TableLayout,
+
+
+
+  TriggerEventHandler
 } from '../interface';
 
 export interface BodyContextProps<RecordType = DefaultRecordType> {
@@ -33,6 +39,5 @@ export interface BodyContextProps<RecordType = DefaultRecordType> {
   expandIconColumnIndex: number;
 }
 
-const BodyContext = React.createContext<BodyContextProps>(null);
+export const BodyContext = React.createContext<BodyContextProps>(null);
 
-export default BodyContext;

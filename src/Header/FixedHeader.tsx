@@ -1,11 +1,11 @@
-import * as React from 'react';
-import { useMemo } from 'react';
 import classNames from 'classnames';
 import { fillRef } from 'rc-util/lib/ref';
-import Header, { HeaderProps } from './Header';
+import * as React from 'react';
+import { useMemo } from 'react';
 import ColGroup from '../ColGroup';
+import { TableContext } from '../context/TableContext';
 import { ColumnsType, ColumnType } from '../interface';
-import TableContext from '../context/TableContext';
+import Header, { HeaderProps } from './Header';
 
 function useColumnWidth(colWidths: number[], columCount: number) {
   return useMemo(() => {

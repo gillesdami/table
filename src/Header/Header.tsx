@@ -1,14 +1,17 @@
 import * as React from 'react';
+import { TableContext } from '../context/TableContext';
 import {
-  ColumnsType,
   CellType,
-  StickyOffsets,
+
+
+
+  ColumnGroupType, ColumnsType,
+
+
   ColumnType,
-  GetComponentProps,
-  ColumnGroupType,
+  GetComponentProps, StickyOffsets
 } from '../interface';
 import HeaderRow from './HeaderRow';
-import TableContext from '../context/TableContext';
 
 function parseHeaderRows<RecordType>(
   rootColumns: ColumnsType<RecordType>,

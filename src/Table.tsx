@@ -24,53 +24,88 @@
  *  - All expanded props, move into expandable
  */
 
-import * as React from 'react';
-import isVisible from 'rc-util/lib/Dom/isVisible';
 import classNames from 'classnames';
-import shallowEqual from 'shallowequal';
-import warning from 'rc-util/lib/warning';
 import ResizeObserver from 'rc-resize-observer';
+import isVisible from 'rc-util/lib/Dom/isVisible';
 import getScrollBarSize from 'rc-util/lib/getScrollBarSize';
-import ColumnGroup from './sugar/ColumnGroup';
-import Column from './sugar/Column';
+import warning from 'rc-util/lib/warning';
+import * as React from 'react';
+import shallowEqual from 'shallowequal';
+import Body from './Body';
+import ColGroup from './ColGroup';
+import { BodyContext } from './context/BodyContext';
+import { ResizeContext } from './context/ResizeContext';
+import { TableContext } from './context/TableContext';
+import Footer, { FooterComponents } from './Footer';
 import FixedHeader from './Header/FixedHeader';
 import Header from './Header/Header';
-import {
-  GetRowKey,
-  ColumnsType,
-  TableComponents,
-  Key,
-  DefaultRecordType,
-  TriggerEventHandler,
-  GetComponentProps,
-  ExpandableConfig,
-  LegacyExpandableProps,
-  GetComponent,
-  PanelRender,
-  TableLayout,
-  ExpandableType,
-  RowClassName,
-  CustomizeComponent,
-  ColumnType,
-  CustomizeScrollBody,
-  TableSticky,
-} from './interface';
-import TableContext from './context/TableContext';
-import BodyContext from './context/BodyContext';
-import Body from './Body';
 import useColumns from './hooks/useColumns';
 import { useLayoutState, useTimeoutLock } from './hooks/useFrame';
-import { getPathValue, mergeObject, validateValue, getColumnsKey } from './utils/valueUtil';
-import ResizeContext from './context/ResizeContext';
+import useSticky from './hooks/useSticky';
 import useStickyOffsets from './hooks/useStickyOffsets';
-import ColGroup from './ColGroup';
-import { getExpandableProps, getDataAndAriaProps } from './utils/legacyUtil';
+import {
+  ColumnsType,
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ColumnType, CustomizeComponent,
+
+  CustomizeScrollBody, DefaultRecordType,
+
+
+  ExpandableConfig,
+
+
+
+
+  ExpandableType, GetComponent, GetComponentProps, GetRowKey,
+
+
+  Key,
+
+
+
+
+  LegacyExpandableProps,
+
+  PanelRender,
+
+
+  RowClassName, TableComponents,
+
+
+
+
+
+
+
+
+  TableLayout,
+
+
+
+
+
+  TableSticky, TriggerEventHandler
+} from './interface';
 import Panel from './Panel';
-import Footer, { FooterComponents } from './Footer';
+import StickyScrollBar from './stickyScrollBar';
+import Column from './sugar/Column';
+import ColumnGroup from './sugar/ColumnGroup';
 import { findAllChildrenKeys, renderExpandIcon } from './utils/expandUtil';
 import { getCellFixedInfo } from './utils/fixUtil';
-import StickyScrollBar from './stickyScrollBar';
-import useSticky from './hooks/useSticky';
+import { getDataAndAriaProps, getExpandableProps } from './utils/legacyUtil';
+import { getColumnsKey, getPathValue, mergeObject, validateValue } from './utils/valueUtil';
 
 // Used for conditions cache
 const EMPTY_DATA = [];

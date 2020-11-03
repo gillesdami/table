@@ -17,6 +17,4 @@ export interface TableContextProps {
   isSticky: boolean;
 }
 
-const TableContext = React.createContext<TableContextProps>(null);
-
-export default TableContext;
+export const TableContext = React.createContext<TableContextProps>(null);

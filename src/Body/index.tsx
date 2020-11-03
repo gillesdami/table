@@ -1,11 +1,11 @@
 import * as React from 'react';
-import BodyRow from './BodyRow';
-import TableContext from '../context/TableContext';
-import { GetRowKey, Key, GetComponentProps } from '../interface';
-import ExpandedRow from './ExpandedRow';
-import BodyContext from '../context/BodyContext';
+import { BodyContext } from '../context/BodyContext';
+import { ResizeContext } from '../context/ResizeContext';
+import { TableContext } from '../context/TableContext';
+import { GetComponentProps, GetRowKey, Key } from '../interface';
 import { getColumnsKey } from '../utils/valueUtil';
-import ResizeContext from '../context/ResizeContext';
+import BodyRow from './BodyRow';
+import ExpandedRow from './ExpandedRow';
 import MeasureCell from './MeasureCell';
 
 export interface BodyProps<RecordType> {
